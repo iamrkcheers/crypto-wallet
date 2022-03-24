@@ -9,3 +9,5 @@ Technology Stack :
   4. ReactJS
   5. JavaScript
   6. MetaMask
+  7. Mocha
+  8. Chai
