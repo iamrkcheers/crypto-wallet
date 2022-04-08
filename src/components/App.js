@@ -28,10 +28,12 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts();
     this.setState({ account: accounts[0] });
 
-    const daiTokenAddress = "0x22EdFd9b8D5Cb9c54D51756A9E14866E5B62B5Ef"; // replace dai address here
+    // const daiTokenAddress = "0x22EdFd9b8D5Cb9c54D51756A9E14866E5B62B5Ef"; // replace dai address here
+    const networkId = await web3.eth.net.getId();
+    const daiTokenData = DaiTokenMockThree.networks[networkId];
     const daiTokenMock = new web3.eth.Contract(
       DaiTokenMockThree.abi,
-      daiTokenAddress
+      daiTokenData.address
     );
     this.setState({ daiTokenMock });
 
